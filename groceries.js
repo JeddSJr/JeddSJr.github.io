@@ -114,8 +114,9 @@ var products = [
   function getTotalPrice(chosenProducts) {
 	   totalPrice = 0;
 	   for (let i=0; i<products.length; i+=1) {
+       console.log(chosenProducts);
 		      if (chosenProducts.indexOf(products[i].name) > -1){
-              console.log("hello")
+              console.log("hello");
 			         totalPrice += products[i].price;
 		      }
 	    }
