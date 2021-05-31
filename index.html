@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Code adapted from  https://github.com/carolinebarriere/carolinebarriere.github.io/blob/master/SEG3125-Module2-Grocery/index.html-->
     <link rel="stylesheet" href="style.css">
-    <title>UI Evaluation - Song Jedd</title>
+    <script src="groceries.js"></script>
+    <script src="main.js"></script>
+    <title>Online Grocery Store - Song Jedd</title>
   </head>
   <body>
-
       <div class="intro">
-        <h1>User Interface Evaluation</h1>
-        <h1>Case: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></h1>
+        <h1>LePanda grocery store</h1>
       </div>
-      <div class="UI_eval">
 
-        <div class="UI_Img">
-          <a href="https://en.wikipedia.org/wiki/Main_Page"><img src="uiWikipedia.PNG" alt="" /></a>
-        </div>
-
-        <div class="UI_Survey">
-          <form class="" action="index.html" method="post">
-            <p>SHARE YOUR OPINION !</p><br />
-            <p class="formInput">
-              <label for="fname">First name : </label><input type="text" id="fname" name="fname"><br />
-              <label for="lname">Last name : </label><input type="text" id="lname" name="lname">
-            </p><br />
-            <p class="formInput">
-              Do you like the interface of Wikipedia's home page ?<br />
-              <input type="radio" id="yesOpt" name="option" value="Yes">
-              <label for=" yesOpt">Yes</label><br>
-              <input type="radio" id="noOpt" name="option" value="No">
-              <label for=" noOpt">No</label><br>
-            </p><br />
-            <p class="formInput">
-              From which device do you usually access Wikipedia ?<br>
-    		      <select id="device">
-                <option value="null" selected="selected"> </option>
-			          <option value="Computer" >Computer</option>
-			          <option value="Smartphone">Smartphone</option>
-			          <option value="Other">Other...</option>
-		          </select>
-            </p><br />
-            <p class="formInput">
-              What part(s) of the interface made you like it or not ?<br>
-		          <input type="checkbox" name="Part" value="Color">The colorscheme<br>
-		          <input type="checkbox" name="Part" value="Font">The font of the text<br>
-		          <input type="checkbox" name="Part" value="layout">The layout<br>
-              <input type="checkbox" name="Part" value="sections">The featured sectiont<br>
-              <input type="checkbox" name="Part" value="sections">Other...<br>
-            </p><br />
-            <p >
-              Comments on how Wikipedia UI could be improve upon:<br>
-	            <textarea rows="7" cols="52"></textarea>
-            </p><br>
-            <button id="submitButton" type="button" class="button">
-		          SUBMIT
-	          </button>
-          </form>
-        </div>
-
+      <div class="tab">
+        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
       </div>
+
+      <div id="Client" class="tabcontent">
+        <h3>Client Information</h3>
+        <p>Tell us a bit about you.</p>
+        <p >
+          <label for="name">Name : </label><input type="text" id="fname" name="fname">
+        </p>
+	      Choose a Category:
+	      <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	        <option value=""></option>
+	        <option value="lactoseFree">Lactosefree</option>
+          <option value="nutFree">Nutfree</option>
+          <option value="None">None</option>
+	      </select><br />
+        Organic options only:<br />
+        <input type="radio" id="yesOpt" name="option" value="Yes" onclick="onlyShowOrganic('yes')">
+        <label for=" yesOpt">Yes</label><br>
+        <input type="radio" id="noOpt" name="option" value="No" onclick="onlyShowOrganic('no')">
+        <label for=" noOpt">No</label><br>
+      </div>
+
+      <div id="Products" class="tabcontent">
+        <h3>Your targeted products</h3>
+        <p>We preselected products based on your restrictions.</p>
+	      Choose items to buy:
+	      <div id="displayProduct"></div>
+	      <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		      Add selected items to cart.
+	      </button>
+      </div>
+
+      <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart.</p>
+        <div id="displayCart"></div>
+      </div>
+
     <footer>Work done by ALitteralPanda</footer>
   </body>
 </html>
