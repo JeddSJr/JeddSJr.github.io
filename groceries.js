@@ -72,46 +72,50 @@ var products = [
 ];
 
   function restrictListProducts(prods, restriction,filter) {
-    let product_list = [];
-	  for (let i=0; i<prods.length; i+=1) {
+    console.log(filter);
+    var product_list = [];
+
+    prods.sort(function(a,b){
+      return a.price - b.price;
+    })
+
+	  for (var i=0; i<prods.length; i+=1) {
 		if ((restriction == "lactoseFree") && (prods[i].lactoseFree == true)){
-      var name = prods[i].name;
-      var price = prods[i].price.toString();
-      var pr = name+" : $"+price;
-			product_list.push(pr);
+
+      filterList(i,product_list,prods,filter);
 		}
 		else if ((restriction == "nutFree") && (prods[i].nutFree == true)){
-      var name = prods[i].name;
+      /*var name = prods[i].name;
       var price = prods[i].price.toString();
-      var pr = name+" : $"+price;
-      product_list.push(pr);
+      var pr = name+" : $"+price;*/
+      filterList(i,product_list,prods,filter);
 		}
 		else if (restriction == "None"){
-      var name = prods[i].name;
+      /*var name = prods[i].name;
       var price = prods[i].price.toString();
-      var pr = name+" : $"+price;
-      product_list.push(pr);
+      var pr = name+" : $"+price;*/
+      filterList(i,product_list,prods,filter);
 		}
 	}
-  if (filter == true) {
-    for (let i = 0; i < product_list.length; i++) {
-      if ((product_list[i].organic == false)) {
-        product_list.splice(i);
-      }
-    }
+	return product_list;
   }
 
-    product_list.sort(function(a,b){
-      return a.price - b.price;
-    });
-
-	return product_list;
+  function filterList(i,product_list,prods,filter) {
+    if(filter ==true){
+      if (prods[i].organic == true) {
+        product_list.push(prods[i]);
+      }
+    }
+    else {
+      product_list.push(prods[i]);
+    }
   }
 
   function getTotalPrice(chosenProducts) {
 	   totalPrice = 0;
 	   for (let i=0; i<products.length; i+=1) {
 		      if (chosenProducts.indexOf(products[i].name) > -1){
+              console.log("hello")
 			         totalPrice += products[i].price;
 		      }
 	    }

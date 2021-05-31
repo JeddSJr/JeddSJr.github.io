@@ -48,13 +48,13 @@ function populateListProductChoices(slct1, slct2) {
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
-		checkbox.value = productName;
+		checkbox.value = (productName.name+": $"+productName.price);
 		s2.appendChild(checkbox);
 
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.appendChild(document.createTextNode(productName.name+": $"+productName.price));
 		s2.appendChild(label);
 
 		// create a breakline node and add in HTML DOM
@@ -65,10 +65,10 @@ function populateListProductChoices(slct1, slct2) {
 function onlyShowOrganic(opt) {
   if (opt == "yes") {
     organicFilter = true;
-    console.log(organicFilter);
   } else {
     organicFilter = false;
   }
+	populateListProductChoices('dietSelect','displayProduct');
 }
 
 // This function is called when the "Add selected items to cart" button in clicked
