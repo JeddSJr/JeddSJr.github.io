@@ -62,10 +62,17 @@
         <div id="displayCart"></div><br><br />
         <div >
           Save your cart to reuse it later ?<br />
-          <input type="radio" id="yesOpt" name="option" value="Yes" onclick="">
-          <label for=" yesOpt">Yes</label><br>
-          <input type="radio" id="noOpt" name="option" value="No" onclick="">
-          <label for=" noOpt">No</label><br><br />
+          <input type="radio" id="yesOptCart" name="option" value="Yes" onclick="">
+          <label for=" yesOptCart">Yes</label><br>
+          <input type="radio" id="noOptCart" name="option" value="No" onclick="">
+          <label for=" noOptCart">No</label><br><br />
+        </div>
+        <div >
+          Choose your check-out option:<br />
+          <input type="radio" id="pickupOpt" name="option" value="Pick-up" onclick="">
+          <label for=" pickupOpt">Pick-up groceries at store</label><br>
+          <input type="radio" id="deliveryOpt" name="option" value="Delivery" onclick="">
+          <label for=" deliveryOpt">Get deliveries to your registered address</label><br><br />
         </div>
         <div class="navButton" style="overflow:hidden">
           <button style="float: left;" class="button" onclick="openInfo(event, 'Products', 'productButton')">&laquo; Previous</button>
