@@ -3,7 +3,7 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
-function openInfo(evt, tabName) {
+function openInfo(evt, tabName,tbLinkId) {
 
 	// Get all elements with class="tabcontent" and hide them
 	tabcontent = document.getElementsByClassName("tabcontent");
@@ -15,11 +15,14 @@ function openInfo(evt, tabName) {
 	tablinks = document.getElementsByClassName("tablinks");
 	for (i = 0; i < tablinks.length; i++) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
+		tablinks[i].style.backgroundColor = " rgba(0,0,0,0.5)";
+		tablinks[i].style.color = "white"
 	}
 
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
+	document.getElementById(tbLinkId).style.backgroundColor = "#ccc";
+	document.getElementById(tbLinkId).style.color = "rgba(0,0,0,0.5)";
 
 }
 

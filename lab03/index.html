@@ -7,15 +7,15 @@
     <script src="main.js"></script>
     <title>Online Grocery Store - Song Jedd</title>
   </head>
-  <body>
+  <body onload="openInfo(event, 'Client', 'clientButton')" >
       <div class="intro">
-        <h1>LePanda grocery store</h1>
+        <h1>LeNewPanda grocery store</h1>
       </div>
 
-      <div class="tab">
-        <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+      <div class="tab" >
+        <button class="tablinks" id="clientButton">Client</button>
+        <button class="tablinks" id="productButton">Products</button>
+        <button class="tablinks" id="cartButton">Cart</button>
       </div>
 
       <div id="Client" class="tabcontent">
@@ -30,12 +30,15 @@
 	        <option value="lactoseFree">Lactosefree</option>
           <option value="nutFree">Nutfree</option>
           <option value="None">None</option>
-	      </select><br />
+	      </select><br /><br />
         Organic options only:<br />
         <input type="radio" id="yesOpt" name="option" value="Yes" onclick="onlyShowOrganic('yes')">
         <label for=" yesOpt">Yes</label><br>
         <input type="radio" id="noOpt" name="option" value="No" onclick="onlyShowOrganic('no')">
-        <label for=" noOpt">No</label><br>
+        <label for=" noOpt">No</label><br><br />
+        <div class="navButton" style="overflow:hidden">
+          <button style="float: right;" class="button" onclick="openInfo(event, 'Products', 'productButton')">Next &raquo;</button>
+        </div>
       </div>
 
       <div id="Products" class="tabcontent">
@@ -45,13 +48,21 @@
 	      <div id="displayProduct"></div>
 	      <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		      Add selected items to cart.
-	      </button>
+	      </button><br><br />
+        <div class="navButton" style="overflow:hidden">
+          <button style="float: left;" class="button" onclick="openInfo(event, 'Client', 'clientButton')">&laquo; Previous</button>
+          <button style="float: right;" class="button" onclick="openInfo(event, 'Cart', 'cartButton')">Next &raquo;</button>
+        </div>
       </div>
 
       <div id="Cart" class="tabcontent">
         <h3>Cart</h3>
         <p>Here is your cart.</p>
-        <div id="displayCart"></div>
+        <div id="displayCart"></div><br><br />
+        <div class="navButton" style="overflow:hidden">
+          <button style="float: left;" class="button" onclick="openInfo(event, 'Products', 'productButton')">&laquo; Previous</button>
+          <button style="float: right;" class="button" onclick="openInfo(event, 'Cart', 'cartButton')">Next &raquo;</button>
+        </div>
       </div>
 
     <footer>Work done by ALitteralPanda</footer>

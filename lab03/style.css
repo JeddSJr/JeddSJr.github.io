@@ -46,10 +46,6 @@ footer{
   color: white;
 }
 
-.tab button:hover {
-  background-color: #ddd;
-}
-
 .tab button.active {
   background-color: #ccc;
   color:rgba(0,0,0,0.5);
@@ -67,9 +63,6 @@ footer{
 }
 
 .button{
-  margin-left: 40%;
-  margin-right: 40%;
-  margin-bottom: 1%;
   background-color: white;
   color: black;
   border: 2px solid rgb(92, 138, 138);
