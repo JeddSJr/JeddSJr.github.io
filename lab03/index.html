@@ -16,10 +16,11 @@
         <button class="tablinks" id="clientButton">Client</button>
         <button class="tablinks" id="productButton">Products</button>
         <button class="tablinks" id="cartButton">Cart</button>
+        <button class="tablinks" id="checkButton">Check-Out</button>
       </div>
 
       <div id="Client" class="tabcontent">
-        <h3>Client Information</h3>
+        <h3>Your informations</h3>
         <p>Tell us a bit about you.</p>
         <p >
           <label for="name">Name : </label><input type="text" id="fname" name="fname">
@@ -56,16 +57,27 @@
       </div>
 
       <div id="Cart" class="tabcontent">
-        <h3>Cart</h3>
+        <h3>Your cart</h3>
         <p>Here is your cart.</p>
         <div id="displayCart"></div><br><br />
         <div >
-          Save your cart to reuse it later ?
+          Save your cart to reuse it later ?<br />
+          <input type="radio" id="yesOpt" name="option" value="Yes" onclick="">
+          <label for=" yesOpt">Yes</label><br>
+          <input type="radio" id="noOpt" name="option" value="No" onclick="">
+          <label for=" noOpt">No</label><br><br />
         </div>
-
         <div class="navButton" style="overflow:hidden">
           <button style="float: left;" class="button" onclick="openInfo(event, 'Products', 'productButton')">&laquo; Previous</button>
-          <button style="float: right;" class="button" onclick="openInfo(event, 'Cart', 'cartButton')">Next &raquo;</button>
+          <button style="float: right;" class="button" onclick="openInfo(event, 'Check-Out', 'checkButton')">Finish</button>
+        </div>
+      </div><br />
+
+      <div id="Check-Out" class="tabcontent">
+        <p>Transaction completed</p>
+        <div id="checkOut"></div><br><br />
+        <div class="navButton" style="overflow:hidden">
+          <button style="float: left;" class="button" onclick="openInfo(event, 'Client', 'clientButton')">Home</button>
         </div>
       </div><br />
       <div class="intro" >

@@ -44,6 +44,7 @@ footer{
   padding: 14px 16px;
   transition: 0.3s;
   color: white;
+  cursor: default;
 }
 
 .tab button.active {
@@ -78,4 +79,5 @@ footer{
   border-right: 5px solid rgb(92, 138, 138);;
   border-radius: 7px;
   padding-left: 4px;
+
 }
