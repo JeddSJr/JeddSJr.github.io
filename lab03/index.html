@@ -24,14 +24,14 @@
         <p >
           <label for="name">Name : </label><input type="text" id="fname" name="fname">
         </p>
-	      Choose a Category:
+	      Choose a food restriction:
 	      <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	        <option value=""></option>
 	        <option value="lactoseFree">Lactosefree</option>
           <option value="nutFree">Nutfree</option>
           <option value="None">None</option>
 	      </select><br /><br />
-        Organic options only:<br />
+        Filter for organic food:<br />
         <input type="radio" id="yesOpt" name="option" value="Yes" onclick="onlyShowOrganic('yes')">
         <label for=" yesOpt">Yes</label><br>
         <input type="radio" id="noOpt" name="option" value="No" onclick="onlyShowOrganic('no')">
@@ -59,12 +59,18 @@
         <h3>Cart</h3>
         <p>Here is your cart.</p>
         <div id="displayCart"></div><br><br />
+        <div >
+          Save your cart to reuse it later ?
+        </div>
+
         <div class="navButton" style="overflow:hidden">
           <button style="float: left;" class="button" onclick="openInfo(event, 'Products', 'productButton')">&laquo; Previous</button>
           <button style="float: right;" class="button" onclick="openInfo(event, 'Cart', 'cartButton')">Next &raquo;</button>
         </div>
+      </div><br />
+      <div class="intro" >
+        <a href="contact.html">Need help ?</a>
       </div>
-
     <footer>Work done by ALitteralPanda</footer>
   </body>
 </html>
