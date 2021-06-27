@@ -38,7 +38,13 @@ $(document).ready(function(){
   $("#appointButton").click(function() {
     $("#credit_card").show();
     $("#ccMenu").show();
+    $("#appointButton").hide();
+    $("#confirmButton").show();
   });
+
+ $("#confirmButton").click(function() {
+   alert("Thanks! But no appointment can be made until further notice...");
+ });
 
   $("#flexCheckDefault").click(function () {
     if($(this).is(":checked")){
@@ -93,7 +99,7 @@ $(document).ready(function(){
      alert("Please provide a valid telephone number: (XXX)XXX-XXXX");
      $("#tel").val("(XXX)XXX-XXXX");
     }
-    
+
   });
 
   $("#cCard").blur(function () {
